@@ -363,8 +363,8 @@ class _allPageState extends State<allPage> with TickerProviderStateMixin {
                             );
                           }),
                     ),
-                    tabPlanet(spaces),
-                    dwarf_planet(dwarf)
+                    // tabPlanet(spaces),
+                    // dwarf_planet(dwarf)
                   ],
                 ),
               ),

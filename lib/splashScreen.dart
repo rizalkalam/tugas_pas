@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:project_pas/allPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_pas/tabbar.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _splashScreenState extends State<splashScreen> {
     super.initState();
     Timer(Duration(seconds: 4), (() {
       Navigator.pushReplacement(context,
-          PageTransition(child: allPage(), type: PageTransitionType.fade));
+          PageTransition(child: tabbar(), type: PageTransitionType.fade));
     }));
   }
 
