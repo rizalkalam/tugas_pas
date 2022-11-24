@@ -4,7 +4,7 @@ import 'package:project_pas/space_model.dart';
 
 import 'detailPlanet.dart';
 
-Widget tabPlanet(List<SpaceModel> spaces, ScrollController _scrollController2) {
+Widget tabPlanet(List<SpaceModel> spaces, ScrollController _scrollController1) {
   return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -13,9 +13,9 @@ Widget tabPlanet(List<SpaceModel> spaces, ScrollController _scrollController2) {
         width: double.maxFinite,
         child: Scrollbar(
           isAlwaysShown: true,
-          controller: _scrollController2,
+          controller: _scrollController1,
           child: ListView.builder(
-              controller: _scrollController2,
+              controller: _scrollController1,
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: spaces.length,

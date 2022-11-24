@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
+import 'package:project_pas/commet_model.dart';
 import 'package:project_pas/detailPopular.dart';
-import 'package:project_pas/list1.dart';
+import 'package:project_pas/listcomet.dart';
+import 'package:project_pas/listmoon.dart';
+import 'package:project_pas/listplanet.dart';
+import 'package:project_pas/moon_model.dart';
 import 'package:project_pas/popular_space_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_pas/space_model.dart';
@@ -19,6 +22,8 @@ class all extends StatefulWidget {
 class _allState extends State<all> {
   List<PopularModel> popular = [];
   List<SpaceModel> spaces = [];
+  List<CommetModel> commet = [];
+  List<MoonModel> moon = [];
 
   @override
   void initState() {
@@ -66,6 +71,42 @@ class _allState extends State<all> {
           moons: element['moons'],
           mainColor: element['mainColor']));
     });
+
+    data5.forEach((element) {
+      commet.add(CommetModel(
+          // id: element['id'],
+          objectName: element['objectName'],
+          objectPict: element['objectPict'],
+          objectDetail: element['objectDetail'],
+          rotationsub: element['rotationsub'],
+          rotation: element['rotation'],
+          lengthOfDay: element['lengthOfDay'],
+          lengthOfYear: element['lengthOfYear'],
+          surfaceTemp: element['surfaceTemp'],
+          radius: element['radius'],
+          distanceFromSun: element['distanceFromSun'],
+          mass: element['mass'],
+          moons: element['moons'],
+          mainColor: element['mainColor']));
+    });
+
+    data6.forEach((element) {
+      moon.add(MoonModel(
+          // id: element['id'],
+          objectName: element['objectName'],
+          objectPict: element['objectPict'],
+          objectDetail: element['objectDetail'],
+          rotationsub: element['rotationsub'],
+          rotation: element['rotation'],
+          lengthOfDay: element['lengthOfDay'],
+          lengthOfYear: element['lengthOfYear'],
+          surfaceTemp: element['surfaceTemp'],
+          radius: element['radius'],
+          distanceFromSun: element['distanceFromSun'],
+          mass: element['mass'],
+          moons: element['moons'],
+          mainColor: element['mainColor']));
+    });
   }
 
   @override
@@ -77,7 +118,7 @@ class _allState extends State<all> {
         child: ListView(children: [
           Container(
             alignment: Alignment.center,
-            height: 380,
+            height: 340,
             width: double.maxFinite,
             child: CarouselSlider.builder(
               itemCount: popular.length,
@@ -175,7 +216,7 @@ class _allState extends State<all> {
                                 child: Text(
                                   data.description.toString(),
                                   style: GoogleFonts.orbitron(
-                                      color: Colors.white, fontSize: 10),
+                                      color: Colors.white, fontSize: 12),
                                 ),
                               ),
                               SizedBox(
@@ -192,12 +233,12 @@ class _allState extends State<all> {
                                             data.objectDetail.toString(),
                                             style: GoogleFonts.orbitron(
                                                 color: data.mainColor,
-                                                fontSize: 10),
+                                                fontSize: 11),
                                           ),
                                           Text(data.objectDetail1.toString(),
                                               style: GoogleFonts.orbitron(
                                                   color: Colors.white,
-                                                  fontSize: 10))
+                                                  fontSize: 11))
                                         ],
                                       ),
                                     ),
@@ -214,12 +255,12 @@ class _allState extends State<all> {
                                             data.objectDetail2.toString(),
                                             style: GoogleFonts.orbitron(
                                                 color: data.mainColor,
-                                                fontSize: 10),
+                                                fontSize: 11),
                                           ),
                                           Text('TYPE',
                                               style: GoogleFonts.orbitron(
                                                   color: Colors.white,
-                                                  fontSize: 10))
+                                                  fontSize: 11))
                                         ],
                                       ),
                                     ),
@@ -236,12 +277,12 @@ class _allState extends State<all> {
                                             data.objectDetail3.toString(),
                                             style: GoogleFonts.orbitron(
                                                 color: data.mainColor,
-                                                fontSize: 10),
+                                                fontSize: 11),
                                           ),
                                           Text('RADIUS',
                                               style: GoogleFonts.orbitron(
                                                   color: Colors.white,
-                                                  fontSize: 10))
+                                                  fontSize: 11))
                                         ],
                                       ),
                                     )
@@ -254,24 +295,6 @@ class _allState extends State<all> {
                         SizedBox(
                           height: 5,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(12),
-                          margin: EdgeInsets.only(left: 60),
-                          alignment: Alignment.bottomCenter,
-                          child: Row(
-                            children: [
-                              Text(
-                                'EXPLORE',
-                                style:
-                                    GoogleFonts.orbitron(color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 50,
-                              ),
-                              Image.asset('assets/NextButton.png')
-                            ],
-                          ),
-                        )
                       ])),
                     ),
                   ),
@@ -283,10 +306,14 @@ class _allState extends State<all> {
             height: 10,
           ),
           Container(child: Image.asset('assets/PlanetsGroup.png')),
+          listplanet(spaces),
           SizedBox(
-            height: 10,
+            height: 30,
           ),
-          list1(popular)
+          Container(child: Image.asset('assets/CometGroup.png')),
+          listcomet(commet),
+          Container(child: Image.asset('assets/MoonsGroup.png')),
+          listmoon(moon),
         ]),
       ),
     );

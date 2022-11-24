@@ -76,6 +76,36 @@ flutter:
     - assets/Makemake.png
     - assets/Pluto.png
     - assets/PlanetsGroup.png
+    - assets/CometGroup.png
+    - assets/Hartley.png
+    - assets/Swift.png
+    - assets/Borrely.png
+    - assets/Halley.png
+    - assets/Borisov.png
+    - assets/Churyumov.png
+    - assets/Encke.png
+    - assets/Hale-Bopp.png
+    - assets/ISON.png
+    - assets/Levy9.png
+    - assets/Oumuamua.png
+    - assets/SlidingSpring.png
+    - assets/Swift.png
+    - assets/Tempel.png
+    - assets/Thatcher.png
+    - assets/Wild.png
+    - assets/Zinner.png
+    - assets/MoonsGroup.png
+    - assets/Callisto.png
+    - assets/Deimos.png
+    - assets/Dione.png
+    - assets/Enceladus.png
+    - assets/Europa.png
+    - assets/Ganymede.png
+    - assets/IO.png
+    - assets/Mimas.png
+    - assets/Phobos.png
+    - assets/Titan.png
+    - assets/Luna.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
