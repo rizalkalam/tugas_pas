@@ -192,7 +192,7 @@ class _tabbarState extends State<tabbar> with SingleTickerProviderStateMixin {
           controller: _controller,
           children: [
             all(),
-            tabPlanet(spaces, _scrollController1),
+            tabPlanet(spaces, _scrollController1, news),
             tabCommet(commet, _scrollController2, news),
             tabMoon(moon, _scrollController3, news),
           ],
